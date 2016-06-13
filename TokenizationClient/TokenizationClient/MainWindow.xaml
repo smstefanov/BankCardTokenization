@@ -1,0 +1,15 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:LoginUserControl="clr-namespace:LoginUserControl;assembly=LoginUserControl" xmlns:TokenizationCard="clr-namespace:TokenizationCard;assembly=TokenizationCard" x:Class="TokenizationClient.TokenClient"
+        Title="Tokenization System" Height="450" Width="600">
+    <Grid>
+        <LoginUserControl:LoginUserControl x:Name="LogOrReg" VerticalAlignment="Top" Height="309" Login="LoginUserControl_Login" Register="LoginUserControl_Register" Margin="15,10,10,0"/>
+        <TokenizationCard:TokeniserUserControl x:Name="Tokeniser" HorizontalAlignment="Left" VerticalAlignment="Top" Width="507" Height="309" CardIDRequested="Tokeniser_CardIDRequested" TokenRequested="Tokeniser_TokenRequested" ButtonClearAll="Tokeniser_ButtonClearAll" Margin="47,10,0,0" Visibility="Hidden"/>
+        <Label x:Name="lblToken" Content="Token:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="84,355,0,0" Width="105" FontFamily="Times New Roman" FontSize="16" Height="34" Visibility="Hidden"/>
+        <TextBox x:Name="txtToken" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Margin="224,355,0,0" FontFamily="Times New Roman" FontSize="16" Visibility="Hidden"/>
+        <Label x:Name="lblCardID" Content="Card ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="84,355,0,0" Width="105" FontFamily="Times New Roman" FontSize="16" Height="34" Visibility="Hidden"/>
+        <TextBox x:Name="txtCardID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Margin="224,355,0,0" FontFamily="Times New Roman" FontSize="16" Visibility="Hidden"/>
+        <Button x:Name="btnSaveToFile" Content="To File" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="448,348,0,0" Height="30" FontFamily="Times New Roman" FontSize="14" Click="btnSaveToFile_Click" Visibility="Hidden"/>
+    </Grid>
+</Window>

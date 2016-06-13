@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="TokenizationServer.TokenServer" CodeBehind="TokenServer.svc.cs" %>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TokenServer" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:3433/TokenServer.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:3433/TokenServer.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IToken_ValidationAndLuhnCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidationAndLuhnCheck" />
+  </wsdl:message>
+  <wsdl:message name="IToken_ValidationAndLuhnCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidationAndLuhnCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_CreateToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateToken" />
+  </wsdl:message>
+  <wsdl:message name="IToken_CreateToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_IsRegistered_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsRegistered" />
+  </wsdl:message>
+  <wsdl:message name="IToken_IsRegistered_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsRegisteredResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_IsValidLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsValidLog" />
+  </wsdl:message>
+  <wsdl:message name="IToken_IsValidLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsValidLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_LoadCardID_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCardID" />
+  </wsdl:message>
+  <wsdl:message name="IToken_LoadCardID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCardIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_XMLUserSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:XMLUserSave" />
+  </wsdl:message>
+  <wsdl:message name="IToken_XMLUserSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XMLUserSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_XMLTokenSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:XMLTokenSave" />
+  </wsdl:message>
+  <wsdl:message name="IToken_XMLTokenSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XMLTokenSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_IsTokenInSystem_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsTokenInSystem" />
+  </wsdl:message>
+  <wsdl:message name="IToken_IsTokenInSystem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsTokenInSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_SortByToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:SortByToken" />
+  </wsdl:message>
+  <wsdl:message name="IToken_SortByToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SortByTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_SortByCardID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SortByCardID" />
+  </wsdl:message>
+  <wsdl:message name="IToken_SortByCardID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SortByCardIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IToken">
+    <wsdl:operation name="ValidationAndLuhnCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/ValidationAndLuhnCheck" message="tns:IToken_ValidationAndLuhnCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/ValidationAndLuhnCheckResponse" message="tns:IToken_ValidationAndLuhnCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/CreateToken" message="tns:IToken_CreateToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/CreateTokenResponse" message="tns:IToken_CreateToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsRegistered">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/IsRegistered" message="tns:IToken_IsRegistered_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/IsRegisteredResponse" message="tns:IToken_IsRegistered_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsValidLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/IsValidLog" message="tns:IToken_IsValidLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/IsValidLogResponse" message="tns:IToken_IsValidLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadCardID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/LoadCardID" message="tns:IToken_LoadCardID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/LoadCardIDResponse" message="tns:IToken_LoadCardID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XMLUserSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/XMLUserSave" message="tns:IToken_XMLUserSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/XMLUserSaveResponse" message="tns:IToken_XMLUserSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XMLTokenSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/XMLTokenSave" message="tns:IToken_XMLTokenSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/XMLTokenSaveResponse" message="tns:IToken_XMLTokenSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsTokenInSystem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/IsTokenInSystem" message="tns:IToken_IsTokenInSystem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/IsTokenInSystemResponse" message="tns:IToken_IsTokenInSystem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SortByToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/SortByToken" message="tns:IToken_SortByToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/SortByTokenResponse" message="tns:IToken_SortByToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SortByCardID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/SortByCardID" message="tns:IToken_SortByCardID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/SortByCardIDResponse" message="tns:IToken_SortByCardID_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IToken" type="tns:IToken">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidationAndLuhnCheck">
+      <soap:operation soapAction="http://tempuri.org/IToken/ValidationAndLuhnCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateToken">
+      <soap:operation soapAction="http://tempuri.org/IToken/CreateToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsRegistered">
+      <soap:operation soapAction="http://tempuri.org/IToken/IsRegistered" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidLog">
+      <soap:operation soapAction="http://tempuri.org/IToken/IsValidLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadCardID">
+      <soap:operation soapAction="http://tempuri.org/IToken/LoadCardID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XMLUserSave">
+      <soap:operation soapAction="http://tempuri.org/IToken/XMLUserSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XMLTokenSave">
+      <soap:operation soapAction="http://tempuri.org/IToken/XMLTokenSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsTokenInSystem">
+      <soap:operation soapAction="http://tempuri.org/IToken/IsTokenInSystem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SortByToken">
+      <soap:operation soapAction="http://tempuri.org/IToken/SortByToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SortByCardID">
+      <soap:operation soapAction="http://tempuri.org/IToken/SortByCardID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TokenServer">
+    <wsdl:port name="BasicHttpBinding_IToken" binding="tns:BasicHttpBinding_IToken">
+      <soap:address location="http://localhost:3433/TokenServer.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
